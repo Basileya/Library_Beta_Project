@@ -1,0 +1,20 @@
+--CREATE TABLE IF NOT EXISTS library_card_data(
+--ALTER TABLE library_card_data,
+--  id INTEGER NOT NULL,
+--  user_id INT UNIQUE NOT NULL,
+--  date INTEGER,
+--  user_id INTEGER,
+--  libraryBase_id INTEGER,
+--    FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE,
+--    FOREIGN KEY (libraryBase_id) REFERENCES libraryBase(id) ON DELETE CASCADE,
+INSERT INTO library.library_card_data (`date`, id, is_delete, user_id) VALUES
+('2020-01-15', 1, false, 1),
+('2021-03-22', 2, false, 2),
+('2022-06-10', 3, false, 3),
+('2023-02-01', 4, false, 4),
+('2020-07-30', 5, false, 5),
+('2021-11-11', 6, false, 6),
+('2023-08-18', 7, false, 7),
+('2019-09-05', 8, false, 8),
+('2022-12-25', 9, false, 9),
+('2024-04-04', 10, false, 10);
