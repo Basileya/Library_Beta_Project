@@ -26,13 +26,13 @@
 **/*.iml
 **/.idea/modules.xml
 **/.idea/*.iml
-**/.idea/workspace.xml
-**/.idea/libraries/
-**/.idea/compiler.xml
-**/.idea/gradle.xml
-**/.idea/jarRepositories.xml
-**/.idea/misc.xml
-**/.idea/vcs.xml
+**/workspace.xml
+**/libraries/
+**/compiler.xml
+**/gradle.xml
+**/jarRepositories.xml
+**/misc.xml
+**/vcs.xml
 
 
 
