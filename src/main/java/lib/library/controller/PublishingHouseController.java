@@ -1,6 +1,7 @@
 package lib.library.controller;
 
 import lib.library.dto.PublishingHouseDTO;
+import lib.library.map.PublishingHouseMap;
 import lib.library.model.PublishingHouse;
 import lib.library.repository.PublishingHouseRepository;
 import lib.library.service.PublishingHouseService;
@@ -17,6 +18,9 @@ public class PublishingHouseController {
 
     @Autowired
     PublishingHouseService publishingHouseService;
+
+    @Autowired
+    PublishingHouseMap publishingHouseMap;
 
 
     @GetMapping("/getPublishingHouseName/{id}")
