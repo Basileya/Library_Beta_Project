@@ -1,5 +1,6 @@
 package lib.library.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.persistence.EntityNotFoundException;
 import lib.library.dto.BookDTO;
 import lib.library.service.BookService;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.Optional;
-
+@SecurityRequirement(name = "Vasyl")
 @RestController
 public class BookController {
 

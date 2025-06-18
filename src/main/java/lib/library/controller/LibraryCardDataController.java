@@ -1,5 +1,6 @@
 package lib.library.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lib.library.dto.LibraryCardDataDTO;
 import lib.library.map.LibraryCardDataMap;
 import lib.library.model.LibraryCardData;
@@ -11,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
-
+@SecurityRequirement(name = "Vasyl")
 @RestController
 public class LibraryCardDataController {
 

@@ -1,5 +1,6 @@
 package lib.library.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lib.library.dto.UserDTO;
 import lib.library.model.User;
 import lib.library.service.UserService;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
-
+@SecurityRequirement(name = "Vasyl")
 @RestController
 public class UserController {
 

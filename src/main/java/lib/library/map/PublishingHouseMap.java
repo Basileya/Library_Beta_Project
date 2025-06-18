@@ -12,6 +12,7 @@ public class PublishingHouseMap {
     public PublishingHouse savePublishingHouse(PublishingHouseDTO publishingHouseDTO){
         PublishingHouse publishingHouse = new PublishingHouse();
         publishingHouse.setName(publishingHouseDTO.getName());
+        publishingHouse.setDelete(publishingHouseDTO.getDelete());
         return  publishingHouse;
     }
 
