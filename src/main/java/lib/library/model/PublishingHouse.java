@@ -16,7 +16,6 @@ public class PublishingHouse {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     @Column(name = "id")
     private Integer id;
 

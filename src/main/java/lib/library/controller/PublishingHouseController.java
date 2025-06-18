@@ -1,18 +1,23 @@
 package lib.library.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
 import lib.library.dto.PublishingHouseDTO;
 import lib.library.map.PublishingHouseMap;
 import lib.library.model.PublishingHouse;
 import lib.library.repository.PublishingHouseRepository;
 import lib.library.service.PublishingHouseService;
+import org.springdoc.core.properties.SwaggerUiConfigProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.Optional;
-
+@SecurityRequirement(name = "Vasyl")
 @RestController
 public class PublishingHouseController {
 
@@ -28,9 +33,14 @@ public class PublishingHouseController {
        return publishingHouseService.getPublishingHouse(id);
     }
 
+    @GetMapping("csrf-token")
+    public CsrfToken getCsrfToken(HttpServletRequest request){
+    return (CsrfToken) request.getAttribute("_csrf");
+    }
+
     @PostMapping("/addPublishingHouse")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<PublishingHouse> addPublishingHouse(@ModelAttribute PublishingHouseDTO publishingHouseDTO){
+    public ResponseEntity<PublishingHouse> addPublishingHouse(@RequestBody PublishingHouseDTO publishingHouseDTO){
         PublishingHouse publishingHouse = publishingHouseService.addPublishingHouse(publishingHouseDTO);
         return new ResponseEntity(publishingHouse, HttpStatus.OK);
     }
@@ -53,4 +63,10 @@ public class PublishingHouseController {
 //дописати в контроллері...
 //створити нову гілку локально(розібратися що то таке)... додати коментар...
 // і запушити в gitRepository, створити MergeRequest(pull request)
+
+
 //специфікація spring boot...
+//додати нову гілку, змінити метод delete (getBy)
+
+//створити конфігураційний клас для security...
+//

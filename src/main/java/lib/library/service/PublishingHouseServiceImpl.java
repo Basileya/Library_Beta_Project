@@ -39,16 +39,18 @@ public class PublishingHouseServiceImpl implements PublishingHouseService{
         return publishingHouseRepository.findById(id);
     }
 
+    
     @Override
     public void deletePublishingHouse(String name) throws IOException {
-        PublishingHouse publishingHouse = publishingHouseRepository.getByName(name);
+        PublishingHouse publishingHouse = publishingHouseRepository.getByNameAndDeleteFalse(name);
+        publishingHouseRepository.findAll();
         if (publishingHouse == null){
             throw new EntityNotFoundException("Видавництва " + name +  " немає в наявності") ;
         }
         if (publishingHouse.getDelete() == false){
             publishingHouse.setDelete(true);
-        }
-        else {
+            publishingHouseRepository.save(publishingHouse);
+        } else {
             throw new IOException("Не співпрацюємо із видавництвом " + publishingHouse);
         }
     }
