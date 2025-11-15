@@ -27,17 +27,17 @@ public class BookMap {
         return book;
     }
 
-    public BookDTO getBookDTO(Book book){
-        BookDTO bookDTO = new BookDTO();
-        bookDTO.setName(book.getName());
-        bookDTO.setAuthorName(book.getAuthorName());
-        bookDTO.setYear(book.getYear());
-        bookDTO.setBalance(book.getBalance());
-
-        PublishingHouseDTO publishingHouse = new PublishingHouseDTO();
-        publishingHouse.setName(book.getPublishingHouse().getName());
-        bookDTO.setPublishingHouseDTO(publishingHouse);
-        return  bookDTO;
-    }
+//    public BookDTO getBookDTO(Book book){
+//        BookDTO bookDTO = new BookDTO();
+//        bookDTO.setName(book.getName());
+//        bookDTO.setAuthorName(book.getAuthorName());
+//        bookDTO.setYear(book.getYear());
+//        bookDTO.setBalance(book.getBalance());
+//
+//        PublishingHouseDTO publishingHouse = new PublishingHouseDTO();
+//        publishingHouse.setName(book.getPublishingHouse().getName());
+//        bookDTO.setPublishingHouseDTO(publishingHouse);
+//        return  bookDTO;
+//    }
 
 }

@@ -4,11 +4,16 @@ import jakarta.persistence.EntityNotFoundException;
 import lib.library.dto.BookDTO;
 import lib.library.map.BookMap;
 import lib.library.model.Book;
+import lib.library.model.BooksSpecs;
 import lib.library.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -19,6 +24,7 @@ public class BookServiceImple implements BookService {
 
     @Autowired
     BookRepository bookRepository;
+
 
     @Override
     public Optional<Book> saveBook(BookDTO bookDTO) {
@@ -90,4 +96,49 @@ public class BookServiceImple implements BookService {
         return bookRepository.getByName(name);
     }
 
+    @Override
+    public List<Book> findByLessThenYear(Integer year) {
+//        return bookRepository.findByBookOlderThen(year);
+        return List.of();
+    }
+
+    @Override
+    public List<Book> findByFirstLetter(String latter) {
+        return bookRepository.findByFirstLetter();
+    }
+
+//    @Override
+//    public List<Book> findByCriteria(Map<String, String> criteria) {
+//            Specification<Book> spec = Specification.where(null);
+//
+//            for (Map.Entry<String, String> entry : criteria.entrySet()) {
+//                String key = entry.getKey();
+//                String value = entry.getValue();
+//
+//                switch (key) {
+//                    case "id":
+//                        spec = spec.and(BooksSpecs.hasId(value));
+//                        break;
+//                    case "name":
+//                        spec = spec.and(BooksSpecs.containsName(value));
+//                        break;
+//                    case "authorName":
+//                        spec = spec.and(BooksSpecs.containsAuthorName(value));
+//                        break;
+//                    case "year":
+//                        try {
+//                            Integer year = Integer.parseInt(value);
+//                            spec = spec.and(BooksSpecs.hasYear(year));
+//                        } catch (NumberFormatException e) {
+//
+//                        }
+//                        break;
+//
+//                }
+//            }
+//
+//            return bookRepository.findAll((spec) );
+//        }
 }
+
+

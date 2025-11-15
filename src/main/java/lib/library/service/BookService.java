@@ -5,6 +5,8 @@ import lib.library.dto.BookDTO;
 import lib.library.model.Book;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 public interface BookService {
@@ -22,4 +24,10 @@ public interface BookService {
     Optional<Book> getBook(Integer id);
 
     Book getByName(String name);
+
+    List<Book> findByLessThenYear (Integer year);
+
+    List<Book> findByFirstLetter(String latter);
+
+//    List<Book> findByCriteria(Map<String, String> criteria);
 }
